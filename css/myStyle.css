@@ -1,0 +1,731 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --black: #183157;
+    --orange: #FFACBE;
+    --pink: #FD36F5;
+    --blue: #1F456C;
+    --yellow: #DBC88A;
+
+    --purple: #8640aa;
+    --purpleD1: #4b156a;
+
+    --white: #CDC7D1;
+
+    --gray: #1D1D1E;
+    --grayL1: #282829;
+    --grayL2: #313132;
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--gray);
+    color: var(--white) !important;
+    scroll-behavior: smooth !important;
+    width: 100%;
+    margin: 0;
+}
+
+button:focus,
+.btn:focus,
+.btn-close:focus {
+    box-shadow: none;
+}
+
+.toAppear {
+    opacity: 0;
+    scale: 0.8;
+    transition: all .5s;
+}
+
+.toAppear.active {
+    opacity: 1;
+    scale: 1;
+    transform: translateX(0%) scale(1);
+}
+
+/*NAVIGATION*/
+.navbar {
+    background: var(--gray);
+    opacity: 1;
+    box-shadow: 1px 1px 1px 1px var(--purple);
+    min-height: min-content;
+    height: 12vh;
+    overflow: hidden;
+    color: var(--white) !important;
+}
+
+.navbar>container {
+    position: relative;
+}
+
+.navbar-brand img {
+    width:90px;
+    position: absolute;
+    top: 12px;
+}
+
+.navbar-toggler {
+    background: linear-gradient(45deg, var(--gray), var(--purple));
+    transition: all 0.2s;
+}
+
+.navbar-toggler:hover {
+    scale: 0.95;
+    filter: brightness(0.95);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+
+.navbar-toggler-icon {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.offcanvas-body {
+    opacity: 1 !important;
+    color: var(--white);
+}
+
+.offcanvas.offcanvas-end {
+    background: linear-gradient(90deg, var(--grayL1), var(--purpleD1));
+    transition: all 0.35s;
+    width: 100vw;
+    opacity: 1 !important;
+}
+
+.nav-item {
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+.nav-link{
+    color: var(--white);
+}
+
+.offcanvas button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    transform: scale(2);
+    z-index: 100;
+}
+
+@media only screen and (max-width: 565px) {
+    .offcanvas-body .nav-item {
+        font-size: 3rem;
+        font-weight: 500;
+    }
+}
+
+
+/*HEADER*/
+header {
+    background: linear-gradient(25deg, var(--gray), var(--grayL));
+    min-height: 110vh;
+}
+
+header .h1 {
+    font-weight: 600;
+    font-size: 4.5em;
+    word-spacing: 0.2rem;
+    letter-spacing: 0.8rem;
+    text-shadow: 1px 1px 2px var(--purpleD1);
+}
+
+header .h1>span {
+    font-weight: 800;
+    color: var(--purple);
+}
+
+h2 {
+    font-size: 2.5rem;
+    letter-spacing: 0.5rem;
+    font-weight: 400;
+    text-shadow: 1px 1px 2px var(--purpleD1);
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes grow {
+    0% {
+        scale: 1;
+        transform: translateY(0px);
+    }
+
+    100% {
+        scale: 1.3;
+        transform: translateY(-15px);
+    }
+}
+
+#dynamicElement {
+    position: relative;
+}
+
+#dynamicElement img {
+    position: absolute;
+    animation: ease-in-out floating 3s infinite;
+}
+
+#saturnMagla {
+    position: relative !important;
+    width: 80%
+}
+
+#raketa {
+    width: 100px;
+    z-index: 100;
+    rotate: 45deg;
+    bottom: 15vh;
+    left: 5vw;
+    animation: ease-in-out grow 10s infinite !important;
+    animation: ease-in-out floating 3s infinite;
+
+}
+
+@media only screen and (max-width: 1199px) {
+    header .h1 {
+        font-size: 3em !important;
+    }
+
+    h2 {
+        font-size: 1.9rem !important;
+        ;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+
+    /* targeting between md and lg*/
+    header .h1 {
+        font-size: 2.3em !important;
+    }
+
+    header h2 {
+        font-size: 1.3rem !important;
+        ;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    header .h1 {
+        font-size: 2.3em !important;
+        ;
+    }
+
+    header h2 {
+        font-size: 1.3rem !important;
+        ;
+    }
+}
+
+@media only screen and (max-width: 470px) {
+    header .h1 {
+        font-size: 2.3em !important;
+    }
+
+    h2 {}
+}
+
+/*WHEN, WHERE*/
+#when-where-container i {
+    font-size: 3rem;
+    color: var(--purple);
+}
+
+#when-where-container p {
+    font-size: 1.3rem;
+}
+
+@media only screen and (max-width: 991px) {
+    #when-where-container i {
+        font-size: 3rem;
+    }
+
+    #when-where-container p {
+        font-size: 1.1rem;
+    }
+}
+
+@media only screen and (max-width: 755px) {
+    #when-where-container i {
+        font-size: 3rem;
+        color: var(--purple);
+    }
+
+    #when-where-container p {
+        font-size: 1.1rem;
+    }
+}
+
+
+/*PARAGRAFI SA SLIKAMA*/
+.movingImagesContainer {
+    position: relative;
+    height: 30vh;
+    animation: ease-in-out floating 3s infinite;
+}
+
+/*
+VRLO VAZAN NOTE!!!
+Imam jedan imageContainerDiv cija je pozicija relativna, on mi diktira zauzece prostora movingImagesContainer-a,
+ostala dva u sekciji ce biti apsolutno pozicionirani
+*/
+.imageContainerDiv {
+    width: 40vw;
+    max-width: 300px;
+    transition: all 0.5s;
+    transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    top: -20%;
+    z-index: 0;
+}
+
+.imageContainerDiv:nth-of-type(2) {
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    z-index: 2;
+}
+
+.imageContainerDiv:nth-of-type(3) {
+    position: absolute;
+    right: 5%;
+    top: 40%;
+}
+
+.imageContainer {}
+
+.imageContainerDiv-2 .imageContainer {
+    rotate: -20deg;
+}
+
+.imageContainerDiv-3 .imageContainer {
+    rotate: 20deg;
+}
+
+.imageContainer::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(10deg, var(--gray), var(--purple));
+    opacity: 0.45;
+    z-index: 1000;
+    display: block;
+    content: "";
+}
+
+.paragraf-sa-slikom img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    object-fit: cover;
+}
+
+.paragraf-sa-slikom p {
+    margin-top: 5rem;
+}
+
+.btn {
+    background: var(--purple);
+    color: var(--white);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.05rem;
+    transition: all 0.25s;
+    margin: 0 auto;
+}
+
+.btn:hover {
+    background: var(--purple);
+    color: var(--white);
+    scale: 0.98;
+    filter: brightness(0.9);
+    border-color: none;
+}
+
+.btn:active {
+    color: var(--white) !important;
+    background-color: var(--purple) !important;
+    border-color: transparent !important;
+}
+
+@media only screen and (max-width: 991px) {
+    .imageContainer::after {
+        /* height: calc(100% - 3rem); */
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    #learn-more-button {
+        font-size: 1rem;
+    }
+}
+
+
+/* COUNTDOWN SECTION */
+.timerDisplay {
+    font-weight: 100;
+    font-size: 3rem;
+    margin: 0;
+    color: var(--white);
+}
+
+.timerDisplay>span {
+    position: relative;
+    padding: 0.5rem;
+}
+
+.timerDisplay span div {
+    position: relative;
+    font-size: 1.4rem;
+    top: -0.8rem;
+}
+
+.timerDisplay span div:not(.timerDisplay #months div,
+    .timerDisplay #days div,
+    .timerDisplay #hours div,
+    .timerDisplay #minutes div,
+    .timerDisplay #seconds div) {
+    visibility: hidden;
+}
+
+h2:not(header h2) {
+    font-size: 2.8rem;
+}
+
+#apply-now-button {
+    max-width: 300px;
+    font-size: 1.5rem;
+    border-radius: 20px;
+    background: linear-gradient(45deg, var(--grayL2), var(--purple));
+    background: var(--purple);
+    border: none;
+}
+
+@media only screen and (max-width:1000px) {
+    .timerDisplay {
+        font-weight: 100;
+        font-size: 3rem;
+    }
+
+    .timerDisplay>span {
+        position: relative;
+        padding: 0.5rem;
+    }
+
+    .timerDisplay span div {
+        position: relative;
+        font-size: 1.5rem;
+        top: -0.8rem;
+    }
+
+    h2:not(header h2) {}
+
+    #apply-now-button {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    .timerDisplay {
+        font-weight: 100;
+        font-size: 2.3rem;
+        margin: 0;
+        color: var(--white);
+    }
+
+    .timerDisplay>span {
+        position: relative;
+        padding: 0.5rem;
+    }
+
+    .timerDisplay span div {
+        position: relative;
+        font-size: 1rem;
+        top: -0.8rem;
+    }
+
+    h2:not(header h2) {
+        font-size: 2rem;
+    }
+
+    #apply-now-button {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width:552px) {
+    .timerDisplay {
+        font-weight: 100;
+        font-size: 2rem;
+        margin: 0;
+        color: var(--white);
+    }
+
+    .timerDisplay>span {
+        position: relative;
+        padding: 0.2rem;
+    }
+
+    .timerDisplay span div {
+        position: relative;
+        font-size: 1rem;
+        top: -0.8rem;
+    }
+
+    h2:not(header h2) {
+        font-size: 1.5rem;
+        letter-spacing: 0.3rem;
+    }
+
+    #apply-now-button {
+        font-size: 1rem;
+    }
+}
+/* OUR SERVICES */
+table, td, tr, th{
+    border: 2px var(--purple) solid;
+}
+th, td{
+    padding: 1rem;
+}
+
+/* CARDS */
+#cards-section .card:hover{
+    scale: 0.95;
+    
+}
+.card {
+    background: var(--blue);
+    transition: all 0.5s;
+}
+
+.card:nth-of-type(1) {
+    background: var(--purple);
+}
+
+.cardInfo {
+    width: 25%;
+}
+
+.card-img-top {
+    width: 100%;
+    max-width: 7rem;
+}
+
+.cardInfo h3 {
+    font-size: clamp(1.2rem, 2vw, 1.3rem);
+}
+
+.cardInfo .btn {
+    background: var(--purple);
+    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+}
+
+@media only screen and (max-width:991px) {
+    .cardInfo {
+        width: 60%;
+    }
+}
+
+
+/* PREDAVACI */
+.karticaPredavaca {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    margin-top: 5rem;
+}
+
+.slikaPredavaca {
+    width: 100%;
+}
+
+.professorContact i,
+.organiserContact i {
+    font-size: 1.8rem;
+    color: var(--purple);
+    transition: all 0.3s;
+    border: none;
+}
+
+.professorContact i:hover,
+.organiserContact i:hover {
+    scale: 0.95;
+    filter: brightness(0.8);
+}
+
+.professorInfo h3 {
+    font-size: 2rem;
+}
+
+.professorInfo p {
+    margin: 0;
+}
+
+.professorInfo h3+p {
+    font-size: 1.1rem;
+    color: var(--purple);
+}
+
+.bio {
+    font-size: 1.1rem;
+}
+
+@media only screen and (max-width:991px) {
+    .slikaPredavaca {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width:580px) {
+    .professorInfo h3 {
+        font-size: 1.5rem;
+    }
+
+    .professorContact i {
+        font-size: 1.6rem;
+    }
+
+    .professorInfo h3+p {
+        font-size: 1.05rem;
+    }
+
+    .bio {
+        font-size: 1rem;
+    }
+}
+
+
+/* POKROVITELJI */
+@keyframes scroll {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.logos {
+    overflow-x: hidden;
+    white-space: nowrap;
+    user-select: none;
+    position: relative;
+}
+
+/*.logos::before{
+    content: "";
+    position: absolute;
+    top:0;
+    left: -15%;    
+    width: 30%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0,0,0,0), var(--gray));
+    z-index: 10;
+}*/
+.slider {
+    white-space: nowrap;
+    transform: translateX(50%);
+    animation: scroll 15s infinite linear;
+}
+
+.slider img {
+    width: 250px;
+    padding: 0 3rem;
+}
+
+.slider.active {
+    animation-play-state: paused;
+}
+
+/*FOOTER*/
+footer {
+    background: var(--gray);
+}
+
+footer img {
+    width: 100px;
+}
+
+#logo-container a {
+    transition: all 0.3s;
+}
+
+#logo-container a:hover {
+    scale: 0.95;
+    filter: brightness(0.9);
+}
+
+#social-icons i {
+    font-size: 1.25rem;
+    color: white;
+    transition: all 0.3s;
+}
+
+#social-icons i:hover {
+    scale: 0.95;
+    color: var(--white);
+}
+
+@media only screen and (max-width:575px) {
+    footer img {
+        width: 120px;
+    }
+}
+
+@media only screen and (max-width:767px) {
+    footer .container .row div:nth-of-type(2) {
+        margin-bottom: 12px;
+    }
+}
+
+/* MODAL */
+.modal-content {
+    background: var(--blue);
+    color: var(--white);
+}
+
+.modal-content p {
+    margin: 0;
+}
+
+.modal-title {
+    color: var(--white);
+}
+
+.modal-header .btn-close {
+    color: var(--white);
+}
+
+.modal-footer .btn {
+    font-size: 1.1rem;
+    background: var(--purple);
+}
